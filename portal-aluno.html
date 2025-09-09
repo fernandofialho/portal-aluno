@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal do Aluno - Engenharia Civil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #0d6efd;
+      color: white;
+      padding: 20px;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      border-radius: 6px;
+    }
+    .sidebar a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Sidebar -->
+      <div class="col-md-3 col-lg-2 sidebar text-center">
+        <img src="pedroperfil.png" class="profile-pic">
+        <h5>Vinicius ou Pedro Twitter</h5>
+        <p><strong>Status:</strong> Ativo</p>
+        <p><strong>Curso:</strong> Engenharia Civil</p>
+        <hr>
+        <a href="#">Disciplinas</a>
+        <a href="#">Notas</a>
+        <a href="#">Financeiro</a>
+        <a href="#">Mensagens</a>
+        <a href="#">Configurações</a>
+      </div>
+
+      <!-- Conteúdo Principal -->
+      <div class="col-md-9 col-lg-10 p-4">
+        <h3>Bem-vindo, Vinicius ou Pedro Twitter</h3>
+        <p>Aqui você encontra informações acadêmicas, financeiras e avisos do curso de Engenharia Civil.</p>
+
+        <!-- Cards -->
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Próxima Aula</h5>
+                <p>Cálculo III - 10/09 às 08h - Sala 305</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Última Nota</h5>
+                <p>Estruturas de Concreto: 8.7 (Aprovado)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Financeiro</h5>
+                <p>Parcela de setembro paga.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Disciplinas -->
+        <h5>Minhas Disciplinas</h5>
+        <div class="list-group mb-4">
+          <a href="#" class="list-group-item list-group-item-action">Cálculo III</a>
+          <a href="#" class="list-group-item list-group-item-action">Física das Estruturas</a>
+          <a href="#" class="list-group-item list-group-item-action">Estruturas de Concreto</a>
+          <a href="#" class="list-group-item list-group-item-action">Mecânica dos Solos</a>
+          <a href="#" class="list-group-item list-group-item-action">Topografia</a>
+          <a href="#" class="list-group-item list-group-item-action">Materiais de Construção</a>
+          <a href="#" class="list-group-item list-group-item-action">Hidráulica Aplicada</a>
+          <a href="#" class="list-group-item list-group-item-action">Gestão de Obras</a>
+        </div>
+
+        <!-- Avisos -->
+        <h5>Avisos Recentes</h5>
+        <ul class="list-group">
+          <li class="list-group-item">📢 Inscrições abertas para a Semana da Engenharia (20/09 a 25/09).</li>
+          <li class="list-group-item">📢 Entrega do trabalho de Topografia até 12/09.</li>
+          <li class="list-group-item">📢 Biblioteca ampliou horário de funcionamento até 22h.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
