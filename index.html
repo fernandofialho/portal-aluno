@@ -7,8 +7,20 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: #f1f3f5;
       font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Navbar */
+    .navbar-custom {
+      background-color: #0d6efd;
+    }
+    .navbar-custom .navbar-brand, 
+    .navbar-custom .nav-link {
+      color: white;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #e0e0e0;
     }
 
     /* Sidebar */
@@ -17,6 +29,7 @@
       color: white;
       padding: 20px;
       min-height: 100vh;
+      transition: all 0.3s;
     }
     .sidebar a {
       color: white;
@@ -30,7 +43,6 @@
     .sidebar a:hover {
       background-color: rgba(255,255,255,0.2);
     }
-
     .profile-pic {
       width: 100px;
       height: 100px;
@@ -40,7 +52,7 @@
       border: 2px solid white;
     }
 
-    /* Mobile menu button */
+    /* Mobile sidebar */
     @media (max-width: 768px) {
       .sidebar {
         position: fixed;
@@ -49,7 +61,6 @@
         width: 250px;
         height: 100%;
         z-index: 1000;
-        transition: left 0.3s;
         padding-top: 60px;
       }
       .sidebar.show {
@@ -68,29 +79,38 @@
       }
     }
 
-    /* Cards */
+    /* Cards dashboard */
+    .card-category {
+      border-left: 5px solid #0d6efd;
+      transition: transform 0.2s;
+    }
+    .card-category:hover {
+      transform: translateY(-5px);
+    }
+
     .card-title {
       font-weight: 600;
     }
 
-    /* Sidebar Header */
-    .sidebar h5 {
-      margin-top: 0;
-      margin-bottom: 5px;
-      font-size: 1.2rem;
-    }
-    .sidebar p {
-      margin-bottom: 5px;
-      font-size: 0.9rem;
+    .section-title {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #0d6efd;
     }
   </style>
 </head>
 <body>
 
-  <!-- Botão menu mobile -->
-  <button class="menu-btn d-md-none" onclick="toggleSidebar()">☰ Menu</button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container-fluid">
+      <button class="menu-btn d-md-none" onclick="toggleSidebar()">☰ Menu</button>
+      <a class="navbar-brand ms-2" href="#">Portal do Aluno</a>
+    </div>
+  </nav>
 
-  <div class="container-fluid">
+  <div class="container-fluid" style="padding-top: 70px;">
     <div class="row">
 
       <!-- Sidebar -->
@@ -115,7 +135,7 @@
         <!-- Cards -->
         <div class="row mb-4">
           <div class="col-sm-12 col-md-4 mb-3">
-            <div class="card shadow-sm h-100">
+            <div class="card shadow-sm card-category h-100">
               <div class="card-body">
                 <h5 class="card-title">Próxima Aula</h5>
                 <p>Cálculo III - 10/09 às 08h - Sala 305</p>
@@ -123,7 +143,7 @@
             </div>
           </div>
           <div class="col-sm-12 col-md-4 mb-3">
-            <div class="card shadow-sm h-100">
+            <div class="card shadow-sm card-category h-100" style="border-left-color: #198754;">
               <div class="card-body">
                 <h5 class="card-title">Última Nota</h5>
                 <p>Estruturas de Concreto: 8.7 (Aprovado)</p>
@@ -131,7 +151,7 @@
             </div>
           </div>
           <div class="col-sm-12 col-md-4 mb-3">
-            <div class="card shadow-sm h-100">
+            <div class="card shadow-sm card-category h-100" style="border-left-color: #fd7e14;">
               <div class="card-body">
                 <h5 class="card-title">Financeiro</h5>
                 <p>Parcela de setembro paga.</p>
@@ -141,7 +161,7 @@
         </div>
 
         <!-- Disciplinas -->
-        <h5>Minhas Disciplinas</h5>
+        <h5 class="section-title">Minhas Disciplinas</h5>
         <div class="list-group mb-4">
           <a href="#" class="list-group-item list-group-item-action">Cálculo III</a>
           <a href="#" class="list-group-item list-group-item-action">Física das Estruturas</a>
@@ -154,12 +174,13 @@
         </div>
 
         <!-- Avisos -->
-        <h5>Avisos Recentes</h5>
-        <ul class="list-group">
+        <h5 class="section-title">Avisos Recentes</h5>
+        <ul class="list-group mb-4">
           <li class="list-group-item">📢 Inscrições abertas para a Semana da Engenharia (20/09 a 25/09).</li>
           <li class="list-group-item">📢 Entrega do trabalho de Topografia até 12/09.</li>
           <li class="list-group-item">📢 Biblioteca ampliou horário de funcionamento até 22h.</li>
         </ul>
+
       </div>
     </div>
   </div>
