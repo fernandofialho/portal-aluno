@@ -9,19 +9,17 @@
     body {
       background-color: #f1f3f5;
       font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden; /* evita scroll horizontal */
+      overflow-x: hidden;
     }
 
     /* Navbar */
     .navbar-custom {
       background-color: #0d6efd;
+      padding: 0.5rem 1rem;
     }
-    .navbar-custom .navbar-brand, 
-    .navbar-custom .nav-link {
+    .navbar-custom .navbar-brand {
       color: white;
-    }
-    .navbar-custom .nav-link:hover {
-      color: #e0e0e0;
+      font-weight: 600;
     }
 
     /* Sidebar */
@@ -31,6 +29,7 @@
       padding: 20px;
       min-height: 100vh;
       transition: left 0.3s;
+      z-index: 1050;
     }
     .sidebar a {
       color: white;
@@ -58,35 +57,46 @@
       .sidebar {
         position: fixed;
         top: 0;
-        left: -260px; /* escondida inicialmente */
+        left: -260px;
         width: 260px;
         height: 100%;
-        z-index: 1050;
-        padding-top: 70px;
+        padding-top: 80px;
       }
       .sidebar.show {
         left: 0;
       }
       .menu-btn {
         position: fixed;
-        top: 10px;
-        left: 10px;
+        top: 15px;
+        left: 15px;
         z-index: 1100;
         background-color: #0d6efd;
         color: white;
         border: none;
         padding: 10px 15px;
         border-radius: 6px;
+        font-size: 18px;
+      }
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 22px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
       }
     }
 
     /* Cards dashboard */
     .card-category {
       border-left: 5px solid #0d6efd;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .card-category:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
     .card-title {
@@ -106,30 +116,30 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container-fluid">
-      <button class="menu-btn d-md-none" onclick="toggleSidebar()">☰ Menu</button>
-      <a class="navbar-brand ms-2" href="#">Portal do Aluno</a>
+      <button class="menu-btn d-md-none" onclick="toggleSidebar()">☰</button>
+      <a class="navbar-brand ms-3" href="#">Portal do Aluno</a>
     </div>
   </nav>
 
+  <!-- Sidebar -->
+  <div class="col-md-3 col-lg-2 sidebar text-center" id="sidebar">
+    <button class="close-btn d-md-none" onclick="closeSidebar()">×</button>
+    <img src="Perfil.png" class="profile-pic" alt="Foto do Fernando Fialho">
+    <h5>Fernando Fialho</h5>
+    <p><strong>Status:</strong> Ativo</p>
+    <p><strong>Curso:</strong> Engenharia Civil</p>
+    <hr>
+    <a href="#" onclick="closeSidebar()">Disciplinas</a>
+    <a href="#" onclick="closeSidebar()">Notas</a>
+    <a href="#" onclick="closeSidebar()">Financeiro</a>
+    <a href="#" onclick="closeSidebar()">Mensagens</a>
+    <a href="#" onclick="closeSidebar()">Configurações</a>
+  </div>
+
+  <!-- Conteúdo Principal -->
   <div class="container-fluid" style="padding-top: 70px;">
     <div class="row">
-
-      <!-- Sidebar -->
-      <div class="col-md-3 col-lg-2 sidebar text-center" id="sidebar">
-        <img src="Perfil.png" class="profile-pic" alt="Foto do Fernando Fialho">
-        <h5>Fernando Fialho</h5>
-        <p><strong>Status:</strong> Ativo</p>
-        <p><strong>Curso:</strong> Engenharia Civil</p>
-        <hr>
-        <a href="#" onclick="closeSidebar()">Disciplinas</a>
-        <a href="#" onclick="closeSidebar()">Notas</a>
-        <a href="#" onclick="closeSidebar()">Financeiro</a>
-        <a href="#" onclick="closeSidebar()">Mensagens</a>
-        <a href="#" onclick="closeSidebar()">Configurações</a>
-      </div>
-
-      <!-- Conteúdo Principal -->
-      <div class="col-md-9 col-lg-10 p-4">
+      <div class="col-md-9 col-lg-10 p-4 offset-md-3 offset-lg-2">
         <h3>Bem-vindo, Fernando Fialho</h3>
         <p>Aqui você encontra informações acadêmicas, financeiras e avisos do curso de Engenharia Civil.</p>
 
